@@ -46,10 +46,11 @@ jobs:
           test -s public/index.html
           test -s public/app.js
           mkdir -p app/src/main/assets
-          cp public/index.html public/app.js public/offline.js app/src/main/assets/
+          cp public/index.html public/app.js public/offline.js public/scene.js app/src/main/assets/
           test -s app/src/main/assets/index.html
           test -s app/src/main/assets/app.js
           test -s app/src/main/assets/offline.js
+          test -s app/src/main/assets/scene.js
 
       - name: Compile debug APK
         run: gradle --stacktrace --no-daemon :app:assembleDebug
