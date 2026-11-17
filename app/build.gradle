@@ -12,3 +12,7 @@ android {
     buildTypes { release { minifyEnabled false } }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
 }
+
+dependencies {
+    implementation 'com.google.mediapipe:tasks-genai:0.10.27'
+}
