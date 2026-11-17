@@ -26,4 +26,12 @@ nav{gap:7px;padding:9px 10px calc(9px + env(safe-area-inset-bottom));background:
 nav button{font-size:12px;padding:12px 2px}
 label input[type=checkbox]{width:auto}
 @media(max-width:370px){.avatar{height:180px}.grid .card h2{font-size:16px}}
-</style></head><body><header><h1>✦ Aevonyr Romance</h1><span>AI • CZ • 18+</span></header><main id="root"></main><nav><button class="secondary" onclick="tab='discover';render()">Objevovat</button><button class="secondary" onclick="tab='chat';render()">Příběh</button><button class="secondary" onclick="tab='library';render()">Knihovna</button></nav><script src="offline.js"></script><script src="app.js"></script></body></html>
+
+.scene-stage{height:240px;border-radius:20px;position:relative;overflow:hidden;margin:0 0 12px;background:var(--scene-bg);box-shadow:0 15px 40px #0006}
+.scene-stage:before{content:'';position:absolute;inset:-30%;background:radial-gradient(circle at 65% 35%,#ffffff38,transparent 35%);animation:sceneGlow 12s ease-in-out infinite alternate;z-index:1;pointer-events:none}
+.scene-art{position:absolute;width:110%;height:110%;left:-5%;top:-5%;object-fit:cover;animation:scenePan 16s ease-in-out infinite alternate}
+.scene-overlay{position:absolute;z-index:2;inset:auto 0 0;padding:32px 16px 15px;background:linear-gradient(transparent,#0d0b14e8);text-shadow:0 2px 9px #000}
+.scene-overlay h2{margin:5px 0;font-size:20px}.scene-overlay p{margin:0;color:#f5d9e6;font-size:12px}.scene-kicker{font-size:10px;letter-spacing:2px;color:#ffd5a5}
+@keyframes scenePan{from{transform:scale(1) translateX(-1%)}to{transform:scale(1.05) translateX(1%)}}@keyframes sceneGlow{from{transform:translateX(-12%) scale(1)}to{transform:translateX(12%) scale(1.2)}}
+@media(prefers-reduced-motion:reduce){.scene-art,.scene-stage:before{animation:none}}
+</style></head><body><header><h1>✦ Aevonyr Romance</h1><span>AI • CZ • 18+</span></header><main id="root"></main><nav><button class="secondary" onclick="tab='discover';render()">Objevovat</button><button class="secondary" onclick="tab='chat';render()">Příběh</button><button class="secondary" onclick="tab='library';render()">Knihovna</button></nav><script src="offline.js"></script><script src="scene.js"></script><script src="app.js"></script></body></html>
