@@ -50,3 +50,13 @@ Ukazatele vztahů se zatím mění jednoduchými pravidly, nikoli hlubokou anal�
 ```bash
 npm run check
 ```
+
+## Lokální generativní AI bez API klíče (experimentální)
+
+Android APK nyní obsahuje MediaPipe LLM Inference runtime. V Knihovně zvol **Nahrát .task model**, vyber kompatibilní MediaPipe LLM soubor ve formátu `.task` (například vhodně zabalenou Gemma 3 1B) a zapni **Používat lokální AI**. Model se zkopíruje do interního úložiště aplikace. Poté se text generuje přímo v telefonu, bez internetu a API klíče.
+
+Důležité: **model není součástí APK**, má stovky MB až jednotky GB; běh může být pomalý, náročný na RAM a na některých telefonech nepodporovaný. Obyčejný `.gguf` nebo `.tflite` soubor není kompatibilní s tímto importem. Při selhání vypni lokální AI a používej offline příběhový engine. API knihovna MediaPipe je v režimu údržby; do budoucna je vhodný přechod na LiteRT-LM.
+
+V aplikaci lze nadále používat serverovou AI, ale není nutná pro offline engine ani pro lokální model. Generování obrázků zatím vyžaduje backend. Lokální inference nebyla ověřena na fyzickém telefonu.
+
+Dokumentace: https://developers.google.com/edge/mediapipe/solutions/genai/llm_inference/android
