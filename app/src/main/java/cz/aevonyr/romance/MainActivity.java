@@ -8,11 +8,17 @@ import android.webkit.WebSettings;
 import android.webkit.WebResourceRequest;
 import android.content.Intent;
 import android.net.Uri;
+import android.graphics.Color;
+import android.view.WindowManager;
 
 public class MainActivity extends Activity {
     private WebView web;
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
+        getWindow().setStatusBarColor(Color.rgb(28,18,35));
+        getWindow().setNavigationBarColor(Color.rgb(33,21,37));
+        getWindow().getDecorView().setSystemUiVisibility(0);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         web = new WebView(this);
         web.setWebViewClient(new WebViewClient() {
             @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
