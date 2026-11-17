@@ -10,7 +10,7 @@ android {
         versionName '0.2.0'
     }
     buildTypes { release { minifyEnabled false } }
-    compileOptions { sourceCompatibility JavaVersion.VERSION_21; targetCompatibility JavaVersion.VERSION_17 }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_21; targetCompatibility JavaVersion.VERSION_21 }
 }
 
 dependencies {
