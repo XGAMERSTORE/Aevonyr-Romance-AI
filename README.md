@@ -1,1 +1,52 @@
-# Aevonyr-Romance-AI
+# Aevonyr Romance AI 💗
+
+Česká mobilní webová romantická příběhová hra s vlastními dospělými AI postavami, ukazateli vztahů, historií, generováním portrétů a lokálním demo režimem.
+
+## Spuštění
+
+Vyžaduje Node.js 20+.
+
+```bash
+git clone https://github.com/XGAMERSTORE/Aevonyr-Romance-AI.git
+cd Aevonyr-Romance-AI
+npm start
+```
+
+Otevři http://localhost:3000. Bez API klíče běží ukázkové odpovědi, tvorba postav a ukládání historie.
+
+## Zapnutí skutečné AI
+
+Na serveru nastav proměnnou prostředí `OPENAI_API_KEY` (nikdy ji nevkládej do kódu ani veřejného GitHubu).
+
+Linux/macOS:
+```bash
+export OPENAI_API_KEY="tvuj-klic"
+npm start
+```
+
+PowerShell:
+```powershell
+$env:OPENAI_API_KEY="tvuj-klic"
+npm start
+```
+
+Backend poskytuje `POST /api/chat` a `POST /api/image`. Ve webové aplikaci v Knihovně nech adresu backendu prázdnou pro stejný server nebo nastav veřejnou HTTPS adresu. Pro generování obrázků musí mít API projekt příslušné oprávnění. Modely lze konfigurovat pomocí `OPENAI_MODEL` a `OPENAI_IMAGE_MODEL` na serveru.
+
+## Funkce
+
+- responzivní české rozhraní, Objevovat / Příběh / Knihovna
+- tvorba a mazání postav 18+, vlastní osobnost a úvodní scéna
+- ukazatele náklonnosti, důvěry, respektu, zájmu a napětí
+- chat s historií uloženou lokálně v prohlížeči
+- generování obrázků postav přes serverové AI API
+- romantický a smyslný obsah bez graficky explicitních sexuálních scén
+
+## Omezení první verze
+
+Ukazatele vztahů se zatím mění jednoduchými pravidly, nikoli hlubokou analýzou konverzace. Obrázky mohou spotřebovávat značné množství místa v localStorage a velké obrázky se nemusí uložit. Není implementována autentizace, účtování, databáze ani APK. Pro veřejné nasazení přidej přihlášení, limity požadavků, moderaci, správu nákladů, ochranu soukromí a HTTPS. API klíč musí zůstat pouze na serveru. Projekt není připraven k veřejnému produkčnímu provozu.
+
+## Kontrola syntaxe
+
+```bash
+npm run check
+```
